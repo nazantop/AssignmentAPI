@@ -9,4 +9,3 @@
         public double Average { get; set; }
     }
 }
-

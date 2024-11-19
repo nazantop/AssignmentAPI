@@ -13,4 +13,3 @@ namespace AssignmentAPI.IServices
         public Task<List<AnswerStatisticsResponse>> GetAnswersStatistics();
     }
 }
-

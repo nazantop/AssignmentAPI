@@ -14,4 +14,3 @@
         public string FreeTextAnswer { get; set; }
     }
 }
-

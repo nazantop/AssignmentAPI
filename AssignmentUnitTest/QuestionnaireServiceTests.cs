@@ -17,7 +17,6 @@ namespace AssignmentUnitTest
         [Test]
         public async Task GetAnswersStatistics_ShouldReturnCorrectStatisticsWithNewDepartments()
         {
-            // Arrange
             _questionnaireService.StoreAnswers(new AnswerRequestModel
             {
                 UserId = 1,
@@ -71,7 +70,6 @@ namespace AssignmentUnitTest
         [Test]
         public void StoreAnswers_ShouldAddAnswerToStoreWithMultipleDepartments()
         {
-            // Arrange
             var answerRequest = new AnswerRequestModel
             {
                 UserId = 1,
@@ -102,12 +100,10 @@ namespace AssignmentUnitTest
                 }
             };
 
-            // Act
             _questionnaireService.StoreAnswers(answerRequest);
             _questionnaireService.StoreAnswers(answerRequest2);
             _questionnaireService.StoreAnswers(answerRequest3);
 
-            // Assert
             Assert.AreEqual(3, _questionnaireService.AnswerSubmissions.Count);
             Assert.AreEqual(1, _questionnaireService.AnswerSubmissions.Count(a => a.Department == "Development"));
             Assert.AreEqual(1, _questionnaireService.AnswerSubmissions.Count(a => a.Department == "Reception"));
@@ -117,7 +113,6 @@ namespace AssignmentUnitTest
         [Test]
         public void GetQuestions_ShouldReturnAllStoredQuestionsIncludingDepartments()
         {
-            // Arrange
             var questionResponse = new List<QuestionResponseModel>
             {
                 new QuestionResponseModel { QuestionId = 1, Text = "Test Question 1" },
@@ -125,10 +120,8 @@ namespace AssignmentUnitTest
             };
             _questionnaireService.Questions = questionResponse;
 
-            // Act
             var result = _questionnaireService.GetQuestions();
 
-            // Assert
             Assert.NotNull(result);
             Assert.AreEqual(2, result.Count);
             Assert.AreEqual("Test Question 1", result.First().Text);

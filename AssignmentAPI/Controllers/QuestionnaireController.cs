@@ -66,8 +66,8 @@ public class QuestionnaireController : ControllerBase
 
         var result = new
         {
-            UserId = request.UserId,
-            Department = request.Department,
+            request.UserId,
+            request.Department,
             SubmittedAnswers = request.Answers
         };
 
@@ -86,4 +86,3 @@ public class QuestionnaireController : ControllerBase
     }
 
 }
-

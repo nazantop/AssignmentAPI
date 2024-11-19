@@ -21,6 +21,7 @@
     <None Remove="IServices\" />
     <None Remove="Helpers\" />
     <None Remove="Helpers\Validations\" />
+    <None Remove="Helpers\Pagination\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -29,5 +30,6 @@
     <Folder Include="IServices\" />
     <Folder Include="Helpers\" />
     <Folder Include="Helpers\Validations\" />
+    <Folder Include="Helpers\Pagination\" />
   </ItemGroup>
 </Project>
